@@ -1,14 +1,53 @@
 :root {
-    --primary-bg: #030712;
-    --nav-bg: rgba(17, 24, 39, 0.7);
-    --pill-bg: rgba(0, 0, 0, 0.55);
-    --pill-border: rgba(255, 255, 255, 0.08);
-    --glow-color: rgba(147, 51, 234, 0.35);
-    --text-main: #ffffff;
-    --text-muted: #9ca3af;
-    --accent-gradients: linear-gradient(135deg, #48206E, #6C1A4B);
-    --accent-border-gradients: linear-gradient(135deg, #563c6e, #6e3558);
-    --accent-gradient: linear-gradient(135deg, #7c3aed, #db2777);
+  --primary-bg: #030712;
+  --nav-bg: rgba(17, 24, 39, 0.7);
+  --pill-bg: rgba(0, 0, 0, 0.55);
+  --pill-border: rgba(255, 255, 255, 0.08);
+  --glow-color: rgba(147, 51, 234, 0.35);
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --accent-gradients: linear-gradient(135deg, #48206E, #6C1A4B);
+  --accent-border-gradients: linear-gradient(135deg, #563c6e, #6e3558);
+  --accent-gradient: linear-gradient(135deg, #7c3aed, #db2777);
+}
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: url('../fonts/NeueMachina/NeueMachina-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: url('../fonts/NeueMachina/NeueMachina-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: url('../fonts/NeueMachina/NeueMachina-Ultrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NHaasGrotesk';
+  src: url('../fonts/NHaasGrotesk/NHaasGroteskTXPro-55Rg.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'NHaasGrotesk';
+  src: url('../fonts/NHaasGrotesk/NHaasGroteskTXPro-65Md.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'NHaasGrotesk';
+  src: url('../fonts/NHaasGrotesk/NHaasGroteskTXPro-75Bd.ttf') format('truetype');
+  font-weight: 700;
 }
 
 /* ===============================
@@ -16,17 +55,18 @@
 =================================*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    /* background-color: var(--primary-bg); */
-    color: var(--text-main);
-    line-height: 1.5;
+  /* background-color: var(--primary-bg); */
+  color: var(--text-main);
+  line-height: 1.5;
 }
+
 /* ===============================
    PAGE VISIBILITY CONTROL
 =================================*/
@@ -42,7 +82,15 @@ body.is-ready #app {
   transform: translateY(0);
 }
 
-body.is-ready #loader { display: none; }
+body.is-ready header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.is-ready #loader {
+  display: none;
+  pointer-events: none;
+}
 
 /* ===============================
    LOADER (Phase 1 + Phase 2)
@@ -54,27 +102,21 @@ body.is-ready #loader { display: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 999;
   overflow: hidden;
 
   /* FINAL BACKGROUND (visible after reveal) */
   background:
-    radial-gradient(
-      1800px 500px at 50% 120%,
-      rgba(0,170,255,0.75) 0%,
-      rgba(0,170,255,0.45) 35%,
-      rgba(0,170,255,0.0) 75%
-    ),
-    radial-gradient(
-      900px 600px at 25% 0%,
+    radial-gradient(1800px 500px at 50% 120%,
+      rgba(0, 170, 255, 0.75) 0%,
+      rgba(0, 170, 255, 0.45) 35%,
+      rgba(0, 170, 255, 0.0) 75%),
+    radial-gradient(900px 600px at 25% 0%,
       rgba(80, 39, 77, 0.75),
-      transparent 65%
-    ),
-    radial-gradient(
-      900px 600px at 75% 0%,
+      transparent 65%),
+    radial-gradient(900px 600px at 75% 0%,
       rgba(80, 39, 77, 0.75),
-      transparent 65%
-    ),
+      transparent 65%),
     #000;
 
   perspective: 1200px;
@@ -87,15 +129,30 @@ body.is-ready #loader { display: none; }
   inset: 0;
   background: #000;
   z-index: 1;
-  animation: revealGradient 4.8s ease-in-out forwards; /* Phase-1 duration */
+  animation: revealGradient 4.8s ease-in-out forwards;
+  /* Phase-1 duration */
 }
 
 @keyframes revealGradient {
-  0%   { opacity: 1; }
-  15%  { opacity: 1; }
-  45%  { opacity: 0.55; }
-  70%  { opacity: 0.25; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.55;
+  }
+
+  70% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ===============================
@@ -113,24 +170,48 @@ body.is-ready #loader { display: none; }
 
   /* Phase-1 */
   animation: stepZoom 3s ease-in-out forwards, ringFadeOut 0.6s ease forwards;
-  animation-delay: 0s, 3s; /* fade ring after Phase-1 ends */
+  animation-delay: 0s, 3s;
+  /* fade ring after Phase-1 ends */
 }
 
 @keyframes stepZoom {
-  0%   { transform: rotateX(-68deg) scale(1); }
+  0% {
+    transform: rotateX(-68deg) scale(1);
+  }
 
-  15%  { transform: rotateX(-68deg) scale(0.75); }
-  22%  { transform: rotateX(-68deg) scale(0.75); }  /* stop */
+  15% {
+    transform: rotateX(-68deg) scale(0.75);
+  }
 
-  40%  { transform: rotateX(-68deg) scale(0.5); }
-  47%  { transform: rotateX(-68deg) scale(0.5); }   /* stop */
+  22% {
+    transform: rotateX(-68deg) scale(0.75);
+  }
 
-  70%  { transform: rotateX(-68deg) scale(0.28); }
-  100% { transform: rotateX(-68deg) scale(0.28); }
+  /* stop */
+
+  40% {
+    transform: rotateX(-68deg) scale(0.5);
+  }
+
+  47% {
+    transform: rotateX(-68deg) scale(0.5);
+  }
+
+  /* stop */
+
+  70% {
+    transform: rotateX(-68deg) scale(0.28);
+  }
+
+  100% {
+    transform: rotateX(-68deg) scale(0.28);
+  }
 }
 
 @keyframes ringFadeOut {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
 
 /* dots */
@@ -146,18 +227,53 @@ body.is-ready #loader { display: none; }
 }
 
 /* 12 delays */
-.dot:nth-child(1)  { animation-delay: 0s; }
-.dot:nth-child(2)  { animation-delay: -0.5s; }
-.dot:nth-child(3)  { animation-delay: -1s; }
-.dot:nth-child(4)  { animation-delay: -1.5s; }
-.dot:nth-child(5)  { animation-delay: -2s; }
-.dot:nth-child(6)  { animation-delay: -2.5s; }
-.dot:nth-child(7)  { animation-delay: -3s; }
-.dot:nth-child(8)  { animation-delay: -3.5s; }
-.dot:nth-child(9)  { animation-delay: -4s; }
-.dot:nth-child(10) { animation-delay: -4.5s; }
-.dot:nth-child(11) { animation-delay: -5s; }
-.dot:nth-child(12) { animation-delay: -5.5s; }
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: -1s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: -1.5s;
+}
+
+.dot:nth-child(5) {
+  animation-delay: -2s;
+}
+
+.dot:nth-child(6) {
+  animation-delay: -2.5s;
+}
+
+.dot:nth-child(7) {
+  animation-delay: -3s;
+}
+
+.dot:nth-child(8) {
+  animation-delay: -3.5s;
+}
+
+.dot:nth-child(9) {
+  animation-delay: -4s;
+}
+
+.dot:nth-child(10) {
+  animation-delay: -4.5s;
+}
+
+.dot:nth-child(11) {
+  animation-delay: -5s;
+}
+
+.dot:nth-child(12) {
+  animation-delay: -5.5s;
+}
 
 @keyframes orbitDepth {
   0% {
@@ -165,11 +281,13 @@ body.is-ready #loader { display: none; }
     opacity: 1;
     filter: blur(0px);
   }
+
   50% {
     transform: translate(-50%, -50%) rotate(180deg) translateX(130px) rotate(-180deg) scale(0.55);
     opacity: 0.25;
     filter: blur(3px);
   }
+
   100% {
     transform: translate(-50%, -50%) rotate(360deg) translateX(130px) rotate(-360deg) scale(1);
     opacity: 1;
@@ -216,17 +334,22 @@ body.is-ready #loader { display: none; }
     transform: translate(-50%, -50%) translateZ(1200px);
   }
 }
+
 /* ===============================
    HEADER
 =================================*/
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 1.5rem 2rem;
-    background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  top: 0;
+  z-index: 1000;
+  opacity: 0;
+
 }
 
 /* ===============================
@@ -234,11 +357,15 @@ header {
 =================================*/
 
 nav {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    position: relative;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  top: 30px;
+  width: 100%;
+  z-index: 1000;
+
 }
 
 /* ===============================
@@ -246,41 +373,43 @@ nav {
 =================================*/
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex: 1;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex: 1;
 }
 
 .logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 /* ===============================
    NAV PILL (CENTER)
 =================================*/
 .action-btns-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+  justify-self: end;
 }
 
 .nav-pill-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--pill-bg);
-    background: var(--accent-gradients);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid var(--accent-border-gradients);
-    border-radius: 100px;
-    padding: 3px;
-    box-shadow:
-        0 0 35px var(--glow-color),
-        inset 0 0 15px rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--pill-bg);
+  background: var(--accent-gradients);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--accent-border-gradients);
+  border-radius: 100px;
+  padding: 3px;
+  box-shadow:
+    0 0 35px var(--glow-color),
+    inset 0 0 15px rgba(255, 255, 255, 0.03);
 }
 
 /* ===============================
@@ -288,87 +417,87 @@ nav {
 =================================*/
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2px;
+  display: flex;
+  list-style: none;
+  gap: 2px;
 }
 
 .nav-links a {
-    position: relative;
-    text-decoration: none;
-    color: var(--text-main);
-    /* font-family: "GT America Trial"; */
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.6rem 1.5rem;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  color: var(--text-main);
+  /* font-family: "GT America Trial"; */
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  display: block;
 
 }
 
 /* Hover & Active States */
 
 .nav-links a:hover {
-    color: var(--text-main);
-    background: linear-gradient(90deg, rgba(124, 58, 237, 0.6), rgba(219, 39, 119, 0.6));
+  color: var(--text-main);
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.6), rgba(219, 39, 119, 0.6));
 }
 
 .nav-links a.active::after {
-    display: none;
+  display: none;
 }
 
 .nav-contact-btn {
-    display: flex;
-    flex-direction: row-reverse;
-    /* Arrow on left by default */
-    padding: 0.6rem 1.5rem;
-    align-items: center;
-    gap: 7px;
-    border-radius: 31px;
-    background: var(--accent-gradients);
+  display: flex;
+  flex-direction: row-reverse;
+  /* Arrow on left by default */
+  padding: 0.6rem 1.5rem;
+  align-items: center;
+  gap: 7px;
+  border-radius: 31px;
+  background: var(--accent-gradients);
 
-    /* background: linear-gradient(90deg, rgba(173, 70, 255, 0.60) 0%, rgba(246, 51, 154, 0.60) 100%); */
-    text-decoration: none;
-    color: white;
-    font-family: "GT America Trial", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    /* 171.429% */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* background: linear-gradient(90deg, rgba(173, 70, 255, 0.60) 0%, rgba(246, 51, 154, 0.60) 100%); */
+  text-decoration: none;
+  color: white;
+  font-family: "GT America Trial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* 171.429% */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-arrow-wrapper {
-    /* width: 36px;
+  /* width: 36px;
     height: 36px; */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 6s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 6s ease;
 }
 
 .btn-arrow {
-    width: 23px;
-    height: 23px;
-    filter: brightness(0) invert(1);
-    transition: transform 3s ease;
+  width: 23px;
+  height: 23px;
+  filter: brightness(0) invert(1);
+  transition: transform 3s ease;
 }
 
 /* Button Hover */
 
 .nav-contact-btn:hover {
-    flex-direction: row;
-    background: #9333ea;
+  flex-direction: row;
+  background: #9333ea;
 }
 
 .nav-contact-btn:hover .btn-arrow-wrapper {
-    background: #ec4899;
+  background: #ec4899;
 }
 
 /* ===============================
@@ -376,18 +505,18 @@ nav {
 =================================*/
 
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    margin-left: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
 .menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background: var(--text-main);
-    border-radius: 2px;
+  width: 25px;
+  height: 2px;
+  background: var(--text-main);
+  border-radius: 2px;
 }
 
 /* ===============================
@@ -396,16 +525,16 @@ nav {
 
 @media (max-width: 992px) {
 
-    .nav-pill-container {
-        display: none;
-    }
+  .nav-pill-container {
+    display: none;
+  }
 
-    .nav-contact-btn {
-        display: none;
-    }
+  .nav-contact-btn {
+    display: none;
+  }
 
-    .menu-toggle {
-        display: flex;
-        margin-left: auto;
-    }
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
 }

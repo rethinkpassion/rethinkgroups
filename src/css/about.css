@@ -1,0 +1,228 @@
+/* ===============================
+   ABOUT SECTION
+=================================*/
+
+
+.about-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    margin-top: -120px;
+    /* 🔥 overlap previous section */
+    z-index: 2;
+}
+
+.about-section {
+    position: relative;
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 5%,
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 15%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 100%);
+
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 5%,
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 15%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 100%);
+}
+
+c .fog-overlay {
+    position: absolute;
+    top: -150px;
+    /* extends into previous section */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.about-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    /* Subtle dark shade */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* CLOTH LAYER */
+.cloth-reveal-container {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    /* High z-index to overlay everything during transition */
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.cloth-wave {
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+
+    /* Start state: folded/hidden in bottom right */
+    clip-path: circle(0% at 100% 100%);
+    opacity: 1;
+
+    /* Transition for fluid organic feel */
+    transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Secondary layer for added depth */
+.cloth-wave-2 {
+    position: absolute;
+    inset: 0;
+    background: #f8f9fa;
+    /* Slightly off-white for contrast */
+    clip-path: circle(0% at 100% 100%);
+    opacity: 0.6;
+    z-index: 21;
+    transition: clip-path 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
+}
+
+.about-section.reveal-active .cloth-wave,
+.about-section.reveal-active .cloth-wave-2 {
+    /* End state: covers the whole screen */
+    clip-path: circle(150% at 100% 100%);
+}
+
+/* Fade out container after wave has passed */
+.about-section.reveal-active .cloth-reveal-container {
+    pointer-events: none;
+    animation: fadeContainer 0.5s forwards 2s;
+}
+
+@keyframes fadeContainer {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.about-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1.2s;
+    /* Show after wave passes */
+}
+
+.about-section.reveal-active .about-bg-video {
+    opacity: 0.8;
+}
+
+.about-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s;
+    /* Staggered appear after cloth reveal */
+}
+
+.vision-container {
+    max-width: 800px;
+    text-align: left;
+}
+
+.about-vision-title {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 80px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.about-vision-subtitle {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
+}
+
+.about-visuals {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.floating-abstract-icon {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    transform: translate(30%, 30%) rotate(15deg) scale(0.8);
+    transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s;
+}
+
+.about-section.reveal-active .floating-abstract-icon {
+    transform: translate(0, 0) rotate(0) scale(1);
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .vision-container {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .about-vision-title {
+        font-size: 56px;
+    }
+
+    .about-vision-subtitle {
+        font-size: 24px;
+    }
+
+    .floating-abstract-icon {
+        max-width: 400px;
+        transform: translate(0, 50px) scale(0.9);
+    }
+}

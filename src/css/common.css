@@ -108,10 +108,10 @@ nav {
 .nav-links a {
     position: relative;
     text-decoration: none;
-    color: var(--text-muted);
+    color: var(--text-main);
     /* font-family: "GT America Trial"; */
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.6rem 1.5rem;
@@ -162,14 +162,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s ease;
+    transition: all 6s ease;
 }
 
 .btn-arrow {
     width: 23px;
     height: 23px;
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+    transition: transform 3s ease;
 }
 
 /* Button Hover */

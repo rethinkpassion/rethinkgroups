@@ -1,5 +1,5 @@
 /* ===============================
-   SECTORS SECTION
+   goal SECTION
 =================================*/
 @font-face {
     font-family: "Neue Machina";
@@ -46,7 +46,7 @@
     font-weight: 700;
     font-style: normal;
 }
-.sectors-section {
+.goal-section {
     position: relative;
     min-height: 80vh;
     width: 100%;
@@ -58,7 +58,7 @@
     justify-content: center;
 }
 
-.sectors-section {
+.goal-section {
     position: relative;
 
     -webkit-mask-image: linear-gradient(to bottom,
@@ -78,7 +78,7 @@
             rgba(0, 0, 0, 1) 100%);
 }
 
-.sectors-section::before {
+.goal-section::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -86,7 +86,7 @@
     pointer-events: none;
 }
 
-.sectors-bg-video {
+.goal-bg-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -102,7 +102,7 @@
     transition: opacity 1s ease-in-out 1.2s;
 }
 
-.sectors-section.reveal-active .sectors-bg-video {
+.goal-section.reveal-active .goal-bg-video {
     opacity: 0.8;
 }
 
@@ -117,7 +117,7 @@
     pointer-events: none;
 }
 
-.sectors-content {
+.goal-content {
     position: relative;
     z-index: 10;
     width: 100%;
@@ -129,12 +129,12 @@
 }
 
 
-.sectors-header {
+.goal-header {
     text-align: star;
     margin-bottom: 4rem;
 }
 
-.sectors-title {
+.goal-title {
     font-family: "Neue Haas Grotesk Text Pro";
     font-size: 48px;
     font-weight: 300;
@@ -190,7 +190,7 @@
     transition: all 1s ease 2.5s;
 }
 
-.sectors-section.reveal-active .pillars-container {
+.goal-section.reveal-active .pillars-container {
     opacity: 1;
     transform: translateY(0);
 }
@@ -268,7 +268,7 @@ font-family: Space Grotesk;
     transform-origin: center;
 }
 
-.sectors-section.reveal-active .animated-cube {
+.goal-section.reveal-active .animated-cube {
     animation: circularPathMotion 6s ease-in-out infinite;
 }
 
@@ -281,7 +281,7 @@ font-family: Space Grotesk;
 
 
 
-.sectors-visuals {
+.goal-visuals {
     position: absolute;
     right: -180px;
     top: 50%;
@@ -296,7 +296,7 @@ font-family: Space Grotesk;
     pointer-events: none;
 }
 
-.floating-sectors-icon {
+.floating-goal-icon {
     width: 100%;
     max-width: 550px;
     height: auto;
@@ -359,7 +359,7 @@ font-family: Space Grotesk;
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .sectors-content {
+    .goal-content {
         padding: 0 3rem;
     }
 
@@ -368,7 +368,7 @@ font-family: Space Grotesk;
         gap: 1.5rem;
     }
 
-    .sectors-title {
+    .goal-title {
         font-size: 36px;
     }
 
@@ -402,17 +402,17 @@ font-family: Space Grotesk;
         }
     }
 
-    .sectors-visuals {
+    .goal-visuals {
         display: none;
     }
 }
 
 @media (max-width: 768px) {
-    .sectors-content {
+    .goal-content {
         padding: 0 2rem;
     }
 
-    .sectors-title {
+    .goal-title {
         font-size: 28px;
     }
 

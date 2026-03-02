@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNavbar();
     loadHomeContent();
     loadAboutContent();
-    loadSectorsContent();
+    loadgoalContent();
     loadPhilosophyContent();
    const TOTAL_MS = 5500; // 13s approx
 
@@ -101,23 +101,23 @@ async function loadAboutContent() {
     }
 }
 
-async function loadSectorsContent() {
-    const sectorsPlaceholder = document.getElementById('sectors-placeholder');
-    if (!sectorsPlaceholder) return;
+async function loadgoalContent() {
+    const goalPlaceholder = document.getElementById('goal-placeholder');
+    if (!goalPlaceholder) return;
 
     try {
-        const response = await fetch('src/components/sectors/sectors.html');
+        const response = await fetch('src/components/goal/goal.html');
         if (response.ok) {
             const html = await response.text();
-            sectorsPlaceholder.innerHTML = html;
+            goalPlaceholder.innerHTML = html;
 
-            // Initialize sectors-specific components
-            if (window.initSectorsComponents) {
-                window.initSectorsComponents();
+            // Initialize goal-specific components
+            if (window.initgoalComponents) {
+                window.initgoalComponents();
             }
         }
     } catch (error) {
-        console.error('Error loading sectors content:', error);
+        console.error('Error loading goal content:', error);
     }
 }
 

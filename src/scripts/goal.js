@@ -1,14 +1,14 @@
 
-window.initSectorsComponents = () => {
-    initSectorsReveal();
+window.initgoalComponents = () => {
+    initgoalReveal();
 };
 
-function initSectorsReveal() {
-    const sectorsSection = document.querySelector('.sectors-section');
-    if (!sectorsSection) return;
+function initgoalReveal() {
+    const goalSection = document.querySelector('.goal-section');
+    if (!goalSection) return;
 
-    const title = sectorsSection.querySelector('.sectors-title');
-    const pillarsContainer = sectorsSection.querySelector('.pillars-container');
+    const title = goalSection.querySelector('.goal-title');
+    const pillarsContainer = goalSection.querySelector('.pillars-container');
 
     const observerOptions = {
         threshold: 0.3
@@ -17,27 +17,27 @@ function initSectorsReveal() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                sectorsSection.classList.add('reveal-active');
+                goalSection.classList.add('reveal-active');
 
                 // Trigger animations
                 if (title) animateTitleReveal(title);
                 if (pillarsContainer) animatePillarsReveal(pillarsContainer);
 
-                observer.unobserve(sectorsSection);
+                observer.unobserve(goalSection);
             }
         });
     }, observerOptions);
 
-    observer.observe(sectorsSection);
+    observer.observe(goalSection);
 
     // Dynamic icon movement on scroll
     window.addEventListener('scroll', () => {
-        const rect = sectorsSection.getBoundingClientRect();
+        const rect = goalSection.getBoundingClientRect();
         const scrollPercent = (window.innerHeight - rect.top) /
             (window.innerHeight + rect.height);
 
         if (scrollPercent > 0 && scrollPercent < 1) {
-            const icon = sectorsSection.querySelector('.floating-sectors-icon');
+            const icon = goalSection.querySelector('.floating-goal-icon');
             if (icon) {
                 const translateY = (1 - scrollPercent) * 50;
                 const rotate = (1 - scrollPercent) * 15;

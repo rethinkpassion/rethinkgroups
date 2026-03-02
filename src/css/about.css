@@ -288,20 +288,8 @@
 }
 
 .about-visuals {
-
-    /* position: absolute;
-    right: -150px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 600px;
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5; */
     position: absolute;
-    right: -180px;
+    right: -200px;
     top: 115%;
     transform: translateY(-50%);
     width: 307px;

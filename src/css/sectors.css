@@ -1,0 +1,459 @@
+/* ===============================
+   SECTORS SECTION
+=================================*/
+@font-face {
+    font-family: "Neue Machina";
+    src: url("../../public/assets/fonts/neue-machina-free-for-personal-use/NeueMachina-Light.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tiempos Headline";
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Light.otf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tiempos Headline bold";
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Bold.otf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk Text Pro";
+    src: url("../../public/assets/fonts/Neue-Haas-Grotesk-Font/NHaasGroteskTXPro-55Rg.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk Text Pro";
+    src: url("../../public/assets/fonts/Neue-Haas-Grotesk-Font/NHaasGroteskTXPro-65Md.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk Text Pro";
+    src: url("../../public/assets/fonts/Neue-Haas-Grotesk-Font/NHaasGroteskTXPro-75Bd.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Grotesk";
+    src: url("../../public/assets/fonts/Neue-Haas-Grotesk-Font/NHaasGroteskTXPro-65Md.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+.sectors-section {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -80px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectors-section {
+    position: relative;
+
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 5%,
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 15%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 100%);
+
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 5%,
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 15%,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 100%);
+}
+
+.sectors-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sectors-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%,
+        -50%) ;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1.2s;
+}
+
+.sectors-section.reveal-active .sectors-bg-video {
+    opacity: 0.8;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sectors-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    padding:225px 6rem 40px 6rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+
+.sectors-header {
+    text-align: star;
+    margin-bottom: 4rem;
+}
+
+.sectors-title {
+    font-family: "Neue Haas Grotesk Text Pro";
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #363638;
+    /* filter: blur(30px); */
+    opacity: 1;
+    transform: translateY(-50px);
+    will-change: transform, filter, opacity;
+}
+
+
+@keyframes fadeInBlurToClear {
+    0% {
+        transform: translateY(-50px);
+        filter: blur(30px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px);
+        filter: blur(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.platform-text {
+    background: var(--Gradient-06, linear-gradient(0deg, #40C9FF, #3586f7));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Tiempos Headline";
+    font-style: italic;
+    font-weight: 600;
+    padding-right: 5px;
+    width: inline-block;
+}
+
+.pillars-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease 2.5s;
+}
+
+.sectors-section.reveal-active .pillars-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.pillar-card {
+    flex: 1;
+    position: relative;
+    border-radius: 75px;
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 100px;
+    /* IMPORTANT */
+    font-size: 24px;
+    color: #0A0118;
+    border: 2px solid transparent;
+    background:
+            rgba(223, 223, 248, 0.6);
+    backdrop-filter: blur(10px);
+font-family: Space Grotesk;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-weight: 300;
+}
+
+.pillar-card:hover {
+    background:
+        linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(135deg,
+            rgba(186, 186, 255, 1) 0%,
+            rgba(186, 186, 255, 0.9) 75%,
+            rgba(200, 150, 255, 1) 100%) border-box;
+
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(138, 138, 255, 0.3);
+}
+.pillar-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pillar-card:hover .pillar-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.pillar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pillar-title {
+    font-family: "Neue Haas Grotesk Text Pro";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #030303;
+    margin: 0;
+}
+
+.animated-cube {
+    position: absolute;
+    right: 150px;
+        top: 14%;
+            width: 200px;
+    height: 200px;
+    z-index: 15;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+.sectors-section.reveal-active .animated-cube {
+    animation: circularPathMotion 6s ease-in-out infinite;
+}
+
+.animated-cube img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: cubeRotation 6s linear infinite;
+}
+
+
+
+.sectors-visuals {
+    position: absolute;
+    right: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 307px;
+    height: 307px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.floating-sectors-icon {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    transform: translate(30%, 30%) rotate(15deg) scale(0.8);
+    transform-origin: center;
+    animation: rotateToFro 6s ease-in-out infinite;
+    animation-direction: alternate;
+}
+@keyframes circularPathMotion {
+    0% {
+        transform: translate(200px, 200px) rotate(270deg);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(100px, 100px) rotate(315deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(0px, 0px) rotate(360deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translate(100px, 100px) rotate(315deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(200px, 200px) rotate(270deg);
+        opacity: 1;
+    }
+}
+
+@keyframes cubeRotation {
+    0% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+@keyframes rotateToFro {
+    0% {
+        transform: rotate(270deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(235deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sectors-content {
+        padding: 0 3rem;
+    }
+
+    .pillars-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .sectors-title {
+        font-size: 36px;
+    }
+
+    .pillar-card {
+        padding: 1.5rem 2rem;
+        min-height: 100px;
+    }
+
+    .animated-cube {
+        right: 50px;
+        top: 14%;
+        width: 150px;
+        height: 150px;
+    }
+    
+    @keyframes circularPathMotion {
+        0% {
+            transform: translate(150px, 150px) rotate(270deg);
+        }
+        25% {
+            transform: translate(75px, 75px) rotate(315deg);
+        }
+        50% {
+            transform: translate(0px, 0px) rotate(360deg);
+        }
+        75% {
+            transform: translate(75px, 75px) rotate(315deg);
+        }
+        100% {
+            transform: translate(150px, 150px) rotate(270deg);
+        }
+    }
+
+    .sectors-visuals {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectors-content {
+        padding: 0 2rem;
+    }
+
+    .sectors-title {
+        font-size: 28px;
+    }
+
+    .pillar-card {
+        padding: 1.5rem;
+        border-radius: 50px;
+        gap: 1rem;
+    }
+
+    .pillar-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .pillar-title {
+        font-size: 18px;
+    }
+
+    .animated-cube {
+        right: 20px;
+        top: 35%;
+        width: 100px;
+        height: 100px;
+    }
+    
+    @keyframes circularPathMotion {
+        0% {
+            transform: translate(100px, 100px) rotate(270deg);
+        }
+        25% {
+            transform: translate(50px, 50px) rotate(315deg);
+        }
+        50% {
+            transform: translate(0px, 0px) rotate(360deg);
+        }
+        75% {
+            transform: translate(50px, 50px) rotate(315deg);
+        }
+        100% {
+            transform: translate(100px, 100px) rotate(270deg);
+        }
+    }
+}

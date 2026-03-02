@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNavbar();
     loadHomeContent();
     loadAboutContent();
+    loadSectorsContent();
+    loadPhilosophyContent();
    const TOTAL_MS = 5500; // 13s approx
 
    setTimeout(() => {
@@ -96,6 +98,46 @@ async function loadAboutContent() {
         }
     } catch (error) {
         console.error('Error loading about content:', error);
+    }
+}
+
+async function loadSectorsContent() {
+    const sectorsPlaceholder = document.getElementById('sectors-placeholder');
+    if (!sectorsPlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/sectors/sectors.html');
+        if (response.ok) {
+            const html = await response.text();
+            sectorsPlaceholder.innerHTML = html;
+
+            // Initialize sectors-specific components
+            if (window.initSectorsComponents) {
+                window.initSectorsComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading sectors content:', error);
+    }
+}
+
+async function loadPhilosophyContent() {
+    const philosophyPlaceholder = document.getElementById('philosophy-placeholder');
+    if (!philosophyPlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/philosophy/philosophy.html');
+        if (response.ok) {
+            const html = await response.text();
+            philosophyPlaceholder.innerHTML = html;
+
+            // Initialize philosophy-specific components
+            if (window.initPhilosophyComponents) {
+                window.initPhilosophyComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading philosophy content:', error);
     }
 }
 

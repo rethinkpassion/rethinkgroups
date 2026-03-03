@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadAboutContent();
     loadgoalContent();
     loadPhilosophyContent();
+    loadIndustriesContent();
    const TOTAL_MS = 5500; // 13s approx
 
    setTimeout(() => {
@@ -141,6 +142,25 @@ async function loadPhilosophyContent() {
     }
 }
 
+async function loadIndustriesContent() {
+    const industriesPlaceholder = document.getElementById('industries-placeholder');
+    if (!industriesPlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/industries/industries.html');
+        if (response.ok) {
+            const html = await response.text();
+            industriesPlaceholder.innerHTML = html;
+
+            if (window.initIndustriesComponents) {
+                window.initIndustriesComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading industries content:', error);
+    }
+}
+
 function initNavbarScroll() {
     const logoImg = document.querySelector('.logo-img');
     if (!logoImg) return;
@@ -165,10 +185,6 @@ function initNavbarScroll() {
         }
     });
 }
-document.addEventListener("DOMContentLoaded", function () {
-    const aboutSection = document.querySelector("#about");
-    observer.observe(aboutSection);
-});
 /* ===============================
    LOADER CONTROL
 =================================*/

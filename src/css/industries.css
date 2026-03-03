@@ -1,0 +1,327 @@
+/* ===============================
+   INDUSTRIES CAROUSEL SECTION
+=================================*/
+
+@font-face {
+    font-family: "Neue Machina";
+    src: url("../../public/assets/fonts/neue-machina-free-for-personal-use/NeueMachina-Light.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tiempos Headline";
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Light.otf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk Text Pro";
+    src: url("../../public/assets/fonts/Neue-Haas-Grotesk-Font/NHaasGroteskTXPro-55Rg.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+#industries-placeholder {
+    position: relative;
+    z-index: 5;
+}
+
+.industries-section {
+    position: relative;
+    min-height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f6ff;
+    z-index: 5;
+}
+
+/* Background video */
+.industries-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.industries-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Bottom-left corner accent image - stays behind title */
+.industries-corner-accent {
+    position: absolute;
+    bottom: 0;
+    left: -129px;
+    max-width: 280px;
+    max-height: 220px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: left bottom;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.industries-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    /* padding: 140px 60px 80px 60px; */
+}
+
+/* Fixed title - inside video area, horizontally centered */
+.industries-title-fixed {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Tiempos Headline;
+    font-size: 42px;
+    font-weight: 300;
+    color: #363638;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    z-index: 25;
+    /* margin-top: 57px; */
+    padding: 0 20px;
+    font-family: Tiempos Headline;
+        font-weight: 300;
+        font-style: Light;
+        font-size: 48px;
+        line-height: 55px;
+        letter-spacing: 0px;
+    /* background: var(--Gradient-06, linear-gradient(0deg, #40C9FF, #3586f7)); */
+}
+
+/* Carousel - downside to upside scroll */
+.industries-carousel-wrapper {
+    overflow: hidden;
+    height: 75vh;
+    min-height: 500px;
+}
+
+.industries-track {
+    display: flex;
+    flex-direction: column;
+    transition: transform 600ms ease;
+}
+
+/* Each slide - must match wrapper height so only one slide is visible */
+.industries-slide {
+    min-height: 75vh;
+    height: 75vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 20px 0 20px 0;
+}
+
+.industries-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 180px;
+    width: 100%;
+    max-width: 1400px;
+    min-height: 350px;
+}
+
+/* Image left, content right */
+.industries-image-wrap {
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.industries-text {
+    flex: 1;
+    max-width: 55%;
+}
+
+
+.industries-highlight {
+    display: inline-block;
+    padding: 0 4px;
+    color: #5a4d9e;
+    background: linear-gradient(90deg, #2b7fd9, #5a4d9e 50%, #c41ad8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Tiempos Headline", serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.industries-subtitle {
+    font-family: "Tiempos Headline", serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    color: #363638;
+    margin-bottom: 16px;
+}
+
+.industries-desc {
+    font-family: "Neue Machina", sans-serif;
+    font-size: 16px;
+    color: #5a5a5a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.industries-list-title {
+    font-family: Tiempos Headline, sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    color: #3B3B3B;
+    margin-bottom: 12px;
+    font-weight: 500px;
+}
+
+.industries-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 18px;
+}
+
+.industries-list li {
+    font-family: "Neue Machina", sans-serif;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.8;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: Space Grotesk;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 140%;
+        letter-spacing: -0.5%;
+        text-transform: capitalize;
+}
+
+.industries-list .list-num {
+    color: #bd9cff;
+    /* font-size: 14px;
+    min-width: 28px; */
+    flex-shrink: 0;
+    font-family: DM Sans;
+        font-weight: 300;
+        font-style: Light;
+        font-size: 15px;
+        leading-trim: NONE;
+        line-height: 140%;
+        letter-spacing: -0.5%;
+}
+
+.industries-conclusion {
+    font-family: "Neue Machina", sans-serif;
+    font-size: 15px;
+    color: #5a5a5a;
+    line-height: 1.5;
+}
+
+
+.industries-image-wrap img {
+    width: 100%;
+    height: auto;
+    height: 250px;
+       width: 250px;
+    object-fit: contain;
+}
+
+/* Slide number indicator - beside image on left */
+.industries-slide-num {
+    flex-shrink: 0;
+    align-self: center;
+    font-family: Helvetica Neue;
+    font-size: 50px;
+    font-weight: 300;
+    color: rgba(74, 74, 74, 0.25);
+    line-height: 1;
+    margin-right: 24px;
+}
+
+.industries-slide {
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .industries-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .industries-text {
+        max-width: 100%;
+    }
+
+    .industries-image-wrap {
+        width: 70%;
+        max-width: 350px;
+        align-self: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .industries-container {
+        padding: 100px 24px 60px;
+    }
+
+    .industries-title-fixed {
+        font-size: 28px;
+        top: 100px;
+    }
+
+    .industries-subtitle {
+        font-size: 22px;
+    }
+
+    .industries-carousel-wrapper {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .industries-slide-num {
+        font-size: 48px;
+        margin-right: 16px;
+    }
+
+    .industries-corner-accent {
+        max-width: 140px;
+        max-height: 120px;
+    }
+}

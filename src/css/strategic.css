@@ -1,0 +1,326 @@
+/* ===============================
+   Strategic Section
+=================================*/
+
+.strategic-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+
+    background-image: url("../../public/assets/images/strategy-section-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Container */
+.strategic-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 120px 120px 120px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* LEFT */
+.strategic-left {
+    width: 45%;
+    position: relative;
+    top: 120px;
+}
+
+.strategic-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.strategic-label-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(40%);
+}
+
+.strategic-label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #6B6B6B;
+}
+
+.strategic-heading {
+    font-family: "TiemposHeadline", serif;
+    font-weight: 300;
+    /* base light */
+    font-style: normal;
+    font-size: 48px;
+    line-height: 55px;
+    letter-spacing: 0;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.blue-text {
+
+    background: linear-gradient(71deg,
+            #40C9FF 10%,
+            #1EA5DB 90%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.purple-text {
+    background: linear-gradient(71deg,
+            #B012E6 10%,
+            #E81CFF 90%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.black-text {
+    color: #000;
+}
+
+.blue-text,
+.purple-text,
+.black-text {
+    font-family: "TiemposHeadline", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.black-text {
+    font-weight: 300;
+}
+
+
+.strategic-description {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: #000;
+}
+
+/* RIGHT */
+.strategic-right {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 295px);
+    gap: 40px;
+}
+
+.strategic-card {
+    width: 295px;
+    height: 295px;
+    padding: 24px;
+    border-radius: 16px;
+
+    /* Flex layout */
+    display: flex;
+    flex-direction: column;
+
+    /* Background gradient */
+    background: linear-gradient(180deg,
+            #F6FAFF 0%,
+            #EDF4FF 50%,
+            #F6FAFF 100%);
+
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+
+    transition: all 0.4s ease;
+}
+
+.strategic-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+
+    background: linear-gradient(180deg,
+            #258CB9 0%,
+            rgba(152, 192, 209, 0.5) 44%);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+
+}
+
+.strategic-card:nth-child(2) {
+    position: relative;
+    top: 158px;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    padding: 10.5px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(304deg,
+            rgba(219, 235, 255, 0.3) 0%,
+            #DBEBFF 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+    /* space before heading */
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-content {
+    margin-top: auto;
+    /* pushes content to bottom */
+}
+
+.strategic-card:hover {
+    transform: translateY(-5px);
+}
+
+.strategic-card h3 {
+    font-family: "TiemposHeadline", serif;
+    font-weight: 600;
+    /* Semibold */
+    font-style: normal;
+    font-size: 21.2px;
+    line-height: 32px;
+    letter-spacing: 0;
+    margin: 16px 0 8px 0;
+    color: #000;
+    white-space: nowrap;
+}
+
+.strategic-card:hover {
+    animation: cardGradientHover 3s forwards;
+    transform: translateY(-5px);
+}
+
+@keyframes cardGradientHover {
+    0% {
+        background-image: linear-gradient(to right,
+                rgba(173, 70, 255, 0.6),
+                rgba(246, 51, 154, 0.6));
+    }
+
+    100% {
+        background-image: linear-gradient(to right,
+                rgba(173, 70, 255, 0.6),
+                rgba(246, 51, 154, 0.6));
+    }
+}
+
+.strategic-card:hover h3,
+.strategic-card:hover p {
+    color: #fff;
+}
+
+.strategic-card p {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14.1px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #333;
+    margin: 0;
+}
+
+.strategic-floating-element {
+    position: absolute;
+
+    bottom: 60px;
+    left: -122px;
+    width: 307.868px;
+    height: 307.868px;
+
+    z-index: 1;
+    pointer-events: none;
+
+    animation: floatY 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes floatY {
+
+    0% {
+        transform: translate(0px, 0px) rotate(90deg);
+    }
+
+    20% {
+        transform: translate(-8px, -18px) rotate(92deg);
+    }
+
+    35% {
+        transform: translate(-8px, -18px) rotate(92deg);
+        /* hold top */
+    }
+
+    60% {
+        transform: translate(6px, 22px) rotate(88deg);
+    }
+
+    75% {
+        transform: translate(6px, 30px) rotate(88deg);
+        /* hold bottom */
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(90deg);
+    }
+}
+
+/* ===============================
+   Reveal Animation
+=================================*/
+
+.strategic-left,
+.strategic-right {
+    opacity: 0;
+    filter: blur(20px);
+    transition: all 1s ease;
+}
+
+.strategic-left {
+    transform: translateX(-60px);
+}
+
+.strategic-right {
+    transform: translateX(60px);
+}
+
+.strategic-section.reveal-active .strategic-left,
+.strategic-section.reveal-active .strategic-right {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}

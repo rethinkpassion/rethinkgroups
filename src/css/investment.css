@@ -177,19 +177,23 @@
 /* RIGHT SIDE */
 
 .investment-right {
-    width: 45%;
+   width: 45%;
+
+    display: flex;           
+    flex-direction: column;  
+    gap: 20px;                
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.investment-right p {
     font-family: "Space Grotesk", sans-serif;
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
     letter-spacing: -0.1px;
     color: #111;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.investment-right p {
-    margin-bottom: 28px;
 }
 
 /* ===============================

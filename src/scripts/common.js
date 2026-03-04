@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
    loadSectorsContent();
    loadInvestmentContent();
    loadStrategyContent();
+   loadEnterpriseContent();
 });
 
 async function loadNavbar() {
@@ -294,6 +295,26 @@ async function loadStrategyContent() {
             // Initialize about-specific components
             if (window.initStrategyComponents) {
                 window.initStrategyComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading about content:', error);
+    }
+}
+
+async function loadEnterpriseContent() {
+    const enterprisePlaceholder = document.getElementById('enterprise-placeholder');
+    if (!enterprisePlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/enterprise/enterprise.html');
+        if (response.ok) {
+            const html = await response.text();
+            enterprisePlaceholder.innerHTML = html;
+
+            // Initialize about-specific components
+            if (window.initEnterpriseComponents) {
+                window.initEnterpriseComponents();
             }
         }
     } catch (error) {

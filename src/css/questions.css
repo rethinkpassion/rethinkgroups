@@ -44,11 +44,12 @@
 }
 
 .question-section {
-    padding: 3% 8% 0 3%;
-    min-height: 88vh;
+   
     position: relative;
     overflow: hidden;
     background-image: url("../../public/assets/images/Content.png");
+    padding: 3% 5% 0% 5%;
+        min-height: 88vh;
 }
 .question-bg {
     margin-left: 3%;

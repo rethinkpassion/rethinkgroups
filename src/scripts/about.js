@@ -7,8 +7,6 @@ function initAboutReveal() {
     const aboutSection = document.querySelector('.about-section');
     if (!aboutSection) return;
 
-    const title = aboutSection.querySelector('.about-vision-title');
-
     const observerOptions = {
         threshold: 0.3
     };
@@ -17,10 +15,7 @@ function initAboutReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 aboutSection.classList.add('reveal-active');
-
-                // Trigger blur reveal animation
-                if (title) animateBlurReveal(title);
-
+                // Vision title is animated by CSS only (slideInFromLeftBlurToClear) — no JS so no initial flash
                 observer.unobserve(aboutSection); // Run once
             }
         });

@@ -224,7 +224,8 @@
     white-space: nowrap;
     color: #030303;
     
-    /* Initial state: blurred and off-screen to the left */
+    /* Hidden until animation runs — no initial flash */
+    visibility: hidden;
     filter: blur(30px);
     opacity: 0;
     transform: translateX(-300px);
@@ -238,6 +239,7 @@
 
 @keyframes slideInFromLeftBlurToClear {
     0% {
+        visibility: visible;
         transform: translateX(-400px);
         filter: blur(35px);
         opacity: 0;
@@ -258,6 +260,7 @@
         opacity: 0.85;
     }
     100% {
+        visibility: visible;
         transform: translateX(0);
         filter: blur(0);
         opacity: 1;

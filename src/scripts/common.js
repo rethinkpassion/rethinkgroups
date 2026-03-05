@@ -37,6 +37,7 @@ async function loadNavbar() {
             // Initialize mobile menu if needed
             initNavbarScroll();
             initMobileMenu();
+            initNavbarSmoothScroll();
         }
     } catch (error) {
         console.error('Error loading navbar:', error);
@@ -46,14 +47,16 @@ async function loadNavbar() {
 function setActiveLink() {
     const path = window.location.pathname;
     const page = path.split("/").pop() || "index.html";
+    const hash = window.location.hash.slice(1) || null;
 
     document.querySelectorAll('.nav-links a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href.includes(page)) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+        const href = link.getAttribute('href') || '';
+        const isSectionLink = href.startsWith('#');
+        const linkSectionId = isSectionLink ? href.slice(1) : null;
+        const isActive = isSectionLink
+            ? (page === 'index.html' && ((hash && linkSectionId === hash) || (!hash && linkSectionId === 'home-placeholder')))
+            : href.includes(page);
+        link.classList.toggle('active', isActive);
     });
 }
 
@@ -67,6 +70,41 @@ function initMobileMenu() {
             mobileMenu.classList.toggle('open');
         });
     }
+}
+
+function initNavbarSmoothScroll() {
+    const scrollLinks = document.querySelectorAll('.nav-scroll, .nav-links a[href^="#"]');
+    const navLinksEl = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            const id = href.slice(1);
+            const section = document.getElementById(id);
+            if (section) {
+                e.preventDefault();
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setActiveLinkBySection(id);
+                if (navLinksEl && navLinksEl.classList.contains('active')) {
+                    navLinksEl.classList.remove('active');
+                    if (mobileMenu) mobileMenu.classList.remove('open');
+                }
+            }
+        });
+    });
+}
+
+function setActiveLinkBySection(sectionId) {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (href === '#' + sectionId) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
 async function loadHomeContent() {

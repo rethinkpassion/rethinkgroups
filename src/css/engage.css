@@ -1,0 +1,409 @@
+.engage-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    background: #030712;
+}
+
+.engage-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom,
+            rgba(3, 7, 18, 0) 0%,
+            rgba(3, 7, 18, 0.6) 40%,
+            rgba(3, 7, 18, 1) 100%);
+
+    pointer-events: none;
+}
+
+.engage-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: -200px;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(to bottom,
+            rgba(244, 246, 255, 0) 0%,
+            rgba(248, 248, 251, 0.4) 30%,
+            rgba(244, 246, 255, 0.8) 60%,
+            #f4f6ff 100%);
+}
+
+/* .engage-section{
+    background-image: url("../../public/assets/images/container.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Glass Container */
+.container {
+  position: relative;
+  width: 90%;
+  width: 1080px;
+  height: 512.633px;
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  z-index: 1;
+  display: flex;
+  padding-bottom: 0.22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  /* background-image: url("../../public/assets/images/container.png"); */
+
+}
+
+/* Left Section */
+.left {
+  width: 45%;
+  margin: -164px 0px 0px 27px;
+}
+
+.left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.left .light {
+  color: #FFF;
+  font-family: "Tiempos Headline";
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  margin: -10px 10px 10px -101px;
+
+}
+
+.left .rgt_gradient {
+  background: linear-gradient(90deg, #30c6ff, #8e6bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rgt_gradient{
+    background: var(--Gradient-06, linear-gradient(71deg, #30c6ff 9.04%, #8e6bff 83.63%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'TiemposHeadline';
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0px 0px 0px -40px;
+
+}
+.left_value{
+  display: flex;
+  width: 442px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  position: absolute;
+  left: 50px;
+  top: 50.633px;
+}
+
+
+.left p {
+  align-self: stretch;
+  color: #FFF;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px; 
+  margin: 18px 0px 0px 18px;
+  width: 416px;
+  text-align: left;
+}
+
+/* Form Section */
+.right {
+  width: 50%;
+  margin: 44px 10px 10px 2px;
+  gap:40px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #FFF;
+  font-family: "Tiempos Headline";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; 
+  text-align: justify;
+}
+
+input, textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  width: 224px;
+}
+
+textarea {
+  resize: none;
+  line-height: 20px; 
+  gap:20px;
+}
+.textarea{
+    width: 498px;
+    height: 38px;
+}
+
+textarea::placeholder {
+  height: 21px;
+  align-self: stretch;
+  color: rgba(255, 255, 255, 0.40);
+  font-family: "Space Grotesk";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+/* Submit Button */
+.submit-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 47px 26px 1px 0px;
+}
+
+button {
+  background: linear-gradient(90deg, rgba(173, 70, 255, 0.60) 0%, rgba(246, 51, 154, 0.60) 100%);
+  border: none;
+  padding: 15px 31px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;      
+  align-items: center;    
+  gap: 8px;               
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(160, 90, 255, 0.4);
+}
+
+/* Decorative Cube (Top Right) */
+.cube {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(145deg, #3bb3ff, #005eff);
+  border-radius: 12px;
+  transform: rotate(20deg);
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+/* Paper Plane Curve (Bottom Left) */
+.plane {
+  width: 248.843px;
+  height: 135.272px;
+  transform: rotate(-29.753deg);
+  position: absolute;
+  left: -18.031px;
+  bottom: -53.927px;
+  background: url(public/assets/images/letter_send.png) lightgray -84.661px -0.379px / 129.898% 97.923% no-repeat;
+}
+.letter{
+    width: 288.843px;
+    height: 236.272px;
+    transform: rotate(-1.753deg);
+    position: absolute;
+    left: -27.031px;
+    bottom: -52.073px;
+}
+
+.animated-cube {
+    position: absolute;
+    right: 150px;
+    top: 14%;
+    width: 200px;
+    height: 200px;
+    z-index: 15;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+.engage-section.reveal-active .animated-cube {
+    animation: circularPathMotion 4s ease-in-out infinite;
+}
+
+.animated-cube .letter_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: cubeRotation 6s linear infinite;
+}
+.letter_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.arrow{
+  width: 23px;
+height: 23px;
+
+}
+@keyframes circularPathMotion {
+    0% {
+        transform: translate(0px, 0px);
+         opacity: 1;
+    }
+    30% {
+        transform: translate(0px, 0px); 
+    }
+
+    50% {
+        transform: translate(100px, 100px); 
+         opacity: 1;
+    }
+    80% {
+        transform: translate(100px, 100px); 
+         opacity: 1;
+    }
+
+    100% {
+        transform: translate(0px, 0px); 
+         opacity: 1;
+    }
+}
+
+
+@media (max-width: 1024px) {
+   
+
+    .animated-cube {
+        right: 50px;
+        top: 14%;
+        width: 150px;
+        height: 150px;
+    }
+    
+    @keyframes circularPathMotion {
+        0% {
+            transform: translate(150px, 150px) rotate(270deg);
+        }
+        25% {
+            transform: translate(75px, 75px) rotate(315deg);
+        }
+        50% {
+            transform: translate(0px, 0px) rotate(360deg);
+        }
+        75% {
+            transform: translate(75px, 75px) rotate(315deg);
+        }
+        100% {
+            transform: translate(150px, 150px) rotate(270deg);
+        }
+    }
+
+    .goal-visuals {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .animated-cube {
+        right: 20px;
+        top: 35%;
+        width: 100px;
+        height: 100px;
+    }
+    
+    @keyframes circularPathMotion {
+        0% {
+            transform: translate(100px, 100px) rotate(270deg);
+        }
+        25% {
+            transform: translate(50px, 50px) rotate(315deg);
+        }
+        50% {
+            transform: translate(0px, 0px) rotate(360deg);
+        }
+        75% {
+            transform: translate(50px, 50px) rotate(315deg);
+        }
+        100% {
+            transform: translate(100px, 100px) rotate(270deg);
+        }
+    }
+}
+
+@keyframes cubeRotation {
+    0% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+/* .bg-video{
+    opacity: 0.15;
+  mix-blend-mode: screen;
+
+} */
+ /* .bg-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+} */

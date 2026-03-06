@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadIndustriesContent();
    loadLifecycleContent();
    loadQuestionsContent();
+   loadEngageContent();
    const TOTAL_MS = 5500; // 13s approx
 
    setTimeout(() => {
@@ -380,5 +381,24 @@ async function loadEnterpriseContent() {
         }
     } catch (error) {
         console.error('Error loading about content:', error);
+    }
+}
+async function loadEngageContent() {
+    const aboutPlaceholder = document.getElementById('about-engageholder');
+    if (!aboutPlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/engage/engage.html');
+        if (response.ok) {
+            const html = await response.text();
+            aboutPlaceholder.innerHTML = html;
+
+            // Initialize about-specific components
+            if (window.initAboutComponents) {
+                window.initAboutComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading engage content:', error);
     }
 }

@@ -140,6 +140,8 @@
     letter-spacing: 0;
     color: #363638;
     margin: 0;
+    text-indent: 46px;
+        /* width: 452px; */
 }
 
 .investment-text {
@@ -194,7 +196,15 @@
     line-height: 1.6;
     letter-spacing: -0.1px;
     color: #111;
+    /* width: 452px; */
 }
+.first_para{
+    width: 544px;
+}
+.second_para{
+    width: 563px;
+}
+
 
 /* ===============================
    Investment Reveal Animation

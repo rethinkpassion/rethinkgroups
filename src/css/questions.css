@@ -87,6 +87,7 @@
     font-size: 90px;
     line-height: 1.05;
     font-family: serif;
+    margin-left: 45px;
 }
 
 .thin {
@@ -102,7 +103,6 @@
 
 .gradient {
     font-family: Tiempos Headline medium;
-    /* font-style: italic; */
     font-size: 90px;
     leading-trim: NONE;
     line-height: 88px;

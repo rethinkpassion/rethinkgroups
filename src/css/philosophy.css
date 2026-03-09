@@ -160,7 +160,8 @@
 }
 
 .point-text {
-    font-family: "Neue Machina";
+    /* font-family: "Neue Machina"; */
+        font-family: 'Space Grotesk';
         font-size: 18px;
     font-weight: 400;
     color: #4a4a4a;

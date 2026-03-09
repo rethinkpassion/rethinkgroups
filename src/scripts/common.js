@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadgoalContent();
     loadPhilosophyContent();
     loadIndustriesContent();
-   loadLifecycleContent();
-   loadQuestionsContent();
-   loadEngageContent();
+    loadLifecycleContent();
+    loadQuestionsContent();
+    loadEngageContent();
+    loadFooterContent();
    const TOTAL_MS = 5500; // 13s approx
 
    setTimeout(() => {
@@ -400,5 +401,24 @@ async function loadEngageContent() {
         }
     } catch (error) {
         console.error('Error loading engage content:', error);
+    }
+}
+async function loadFooterContent() {
+    const aboutPlaceholder = document.getElementById('footer-placeholder');
+    if (!aboutPlaceholder) return;
+
+    try {
+        const response = await fetch('src/components/footer/footer.html');
+        if (response.ok) {
+            const html = await response.text();
+            aboutPlaceholder.innerHTML = html;
+
+            // Initialize about-specific components
+            if (window.initAboutComponents) {
+                window.initAboutComponents();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading footer content:', error);
     }
 }

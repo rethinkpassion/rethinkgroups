@@ -349,26 +349,243 @@ height: 23px;
         width: 123px;
         height: 123px;
     }
-    
-    @keyframes circularPathMotion {
-        0% {
-            transform: translate(100px, 100px) rotate(270deg);
-        }
-        25% {
-            transform: translate(50px, 50px) rotate(315deg);
-        }
-        50% {
-            transform: translate(0px, 0px) rotate(360deg);
-        }
-        75% {
-            transform: translate(50px, 50px) rotate(315deg);
-        }
-        100% {
-            transform: translate(100px, 100px) rotate(270deg);
-        }
+
+    .container{
+        width:100%;
+        max-width:720px;
+        margin:120px auto 40px;
+        padding:40px 32px;
+        border-radius:30px;
     }
+
+    .left h1{
+        font-size:48px;
+    }
+
+    .left .light{
+        font-size:48px;
+        margin-left:-60px;
+    }
+
+    .rgt_gradient{
+        font-size:48px;
+        margin-left:-40px;
+    }
+
+    .left p{
+        font-size:16px;
+    }
+
+    .form-row{
+        gap:24px;
+        margin-bottom:28px;
+    }
+
+    label{
+        font-size:12px;
+    }
+
+    input{
+        font-size:15px;
+    }
+
+    .textarea{
+        height:50px;
+    }
+
+    button{
+        padding:14px 30px;
+        font-size:14px;
+    }
+
+    .letter{
+        width:200px;
+        bottom:-40px;
+        left:-30px;
+    }
+
+    .letter_img{
+        margin-left:260px;
+    }
+
 }
 
+@media (max-width:768px){
+
+    .engage-section{
+        padding:60px 16px;
+        justify-content:flex-start;
+    }
+
+    .container{
+        width:100%;
+        max-width:360px;
+        flex-direction:column;
+        gap:26px;
+        border-radius: 30px;
+        backdrop-filter: blur(20px);
+        border: 6px solid rgba(255, 255, 255, 0.20);
+        margin: 112px 10px 10px 10px;
+        padding:28px 24px; 
+        height: 602px;
+
+    }
+
+    .left{
+        width:100%;
+        margin:0;
+    }
+
+    .left h1{
+        font-size:32px;
+        line-height:1.15;
+    }
+
+    .left .light{
+        font-size:32px;
+        margin-left: -127px;
+    }
+  
+
+    .rgt_gradient{
+        font-size:32px;
+        /* margin:0; */
+        margin-left: -100px;
+    }
+
+    .left p{
+        font-size:14px;
+        line-height:1.5;
+        margin-top:12px;
+        width:100%;
+        margin-left: -1px;
+    }
+
+    .right{
+        width:100%;
+        margin:0;
+    }
+
+    .form-row{
+        display:flex;
+        gap:16px;
+        margin-bottom:24px;
+    }
+
+    .form-group{
+        flex:1;
+    }
+
+    label{
+        font-size:11px;
+    }
+
+    input{
+        width:100%;
+        font-size:14px;
+    }
+
+    .textarea{
+        width:100%;
+        height:40px;
+    }
+
+    .submit-wrapper{
+        display:flex;
+        justify-content:flex-start;
+        margin-top:-11px;
+    }
+
+    button{
+        padding:12px 26px;
+        border-radius:26px;
+        font-size:13px;
+        margin-top: 46px;
+    }
+
+    .letter{
+        position:absolute;
+        bottom:-30px;
+        left:-25px;
+        width:170px;
+        height:auto;
+        transform:rotate(-2deg);
+    }
+    .letter_img {
+        width: 109%;
+        height: auto;
+        margin-left: 201px;
+        margin-bottom: -19px;
+    }
+    .submit{
+        margin-top:90px;
+    }
+
+}
+@media (max-width:480px){
+
+    .engage-section{
+        padding:40px 12px;
+    }
+
+    .container{
+        max-width:320px;
+        margin:90px auto 20px;
+        padding:24px 18px;
+        height:auto;
+    }
+
+    .left h1{
+        font-size:28px;
+    }
+
+    .left .light{
+        font-size:28px;
+        margin-left:-90px;
+    }
+
+    .rgt_gradient{
+        font-size:28px;
+        margin-left:-70px;
+    }
+
+    .left p{
+        font-size:13px;
+    }
+
+    .form-row{
+        gap:12px;
+        margin-bottom:20px;
+    }
+
+    label{
+        font-size:10px;
+    }
+
+    input{
+        font-size:13px;
+    }
+
+    .textarea{
+        height:36px;
+    }
+
+    button{
+        padding:10px 22px;
+        font-size:12px;
+    }
+
+    .letter{
+        width:140px;
+        bottom:-25px;
+        left:-20px;
+    }
+
+    .letter_img{
+        margin-left:170px;
+    }
+
+}
 @keyframes cubeRotation {
     0% {
         transform: rotate(270deg);

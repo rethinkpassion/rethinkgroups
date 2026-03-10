@@ -141,7 +141,7 @@
     color: #363638;
     margin: 0;
     text-indent: 46px;
-        /* width: 452px; */
+    /* width: 452px; */
 }
 
 .investment-text {
@@ -179,11 +179,11 @@
 /* RIGHT SIDE */
 
 .investment-right {
-   width: 45%;
+    width: 45%;
 
-    display: flex;           
-    flex-direction: column;  
-    gap: 20px;                
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -198,10 +198,12 @@
     color: #111;
     /* width: 452px; */
 }
-.first_para{
+
+.first_para {
     width: 544px;
 }
-.second_para{
+
+.second_para {
     width: 563px;
 }
 
@@ -233,4 +235,117 @@
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+}
+
+/* =================================
+   TABLET (iPad landscape)
+=================================*/
+
+@media (max-width: 1024px) {
+
+    .investment-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 60px;
+        gap: 50px;
+    }
+
+    .investment-left {
+        width: 100%;
+        text-align: center;
+    }
+
+     .investment-right {
+        width: 100%;
+        max-width: 650px;
+        align-items: flex-start;
+    }
+
+    .investment-right p {
+        width: 100%;
+        max-width: 650px;
+        text-align: justify;
+    }
+
+    /* remove desktop widths */
+    .first_para,
+    .second_para {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .investment-heading{
+
+        font-family: "TiemposHeadline", serif;
+        font-weight: 300;
+
+        font-size: 30px;
+        line-height: 36px;
+
+        text-indent: 0;
+        padding-left: 0;
+        max-width: 100%;
+
+        white-space: nowrap; 
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .investment-container {
+        padding: 80px 30px;
+        gap: 40px;
+    }
+
+    .investment-right {
+        width: 100%;
+        max-width: 320px;
+        align-items: flex-start;
+    }
+
+    .investment-right p {
+        width: 100%;
+        max-width: 320px;
+        text-align: left;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .first_para,
+    .second_para {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .investment-container {
+        padding: 70px 22px;
+        gap: 30px;
+    }
+
+    .investment-right{
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .investment-right p{
+        width: 100%;
+        max-width: 320px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .first_para,
+    .second_para{
+        width: 100%;
+        max-width: 320px;
+    }
+
 }

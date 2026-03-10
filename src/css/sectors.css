@@ -417,59 +417,102 @@
     .sectors-section {
         flex-direction: column;
         align-items: center;
-        padding: 100px 40px;
+        justify-content: flex-start;
+
+        padding: 100px 40px 80px 40px;
+        min-height: auto;
     }
 
     .sectors-content {
         width: 100%;
+        max-width: 720px;
+
         padding: 0;
-        gap: 50px;
+        gap: 40px;
+
+        align-items: flex-start;
     }
 
-    .primary-sectors-list {
-        margin-left: 0;
+    /* LABEL */
+
+    .primary-sectors-wrapper{
+        gap:10px;
     }
 
-    .primary-sectors-list p {
-        font-size: 26px;
-        line-height: 30px;
-        padding-left: 45px;
+    .primary-sectors-text{
+        font-size:16px;
+        line-height:22px;
     }
 
-    .sectors-side-video {
-        position: relative;
-        width: 350px;
-        height: auto;
-        margin-top: 60px;
-        bottom: auto;
-        right: auto;
+    /* LIST */
+
+    .primary-sectors-list{
+        margin-left:0;
+        gap:28px;
+        width:100%;
     }
 
-    .sectors-side-video video {
-        width: 100%;
-        height: auto;
+    .primary-sectors-list p{
+        font-size:26px;
+        line-height:30px;
+
+        padding-left:45px;
     }
 
-    .primary-sectors-list {
-        position: relative;
+    /* ARROW */
+
+    .primary-sectors-list p::before{
+        width:36px;
+        height:24px;
     }
 
-    #sector-hover-preview {
+    /* PREVIEW IMAGE */
 
-        position: absolute;
-        right: 0;
-        top: 0;
+    #sector-hover-preview{
+        position:absolute;
 
-        width: 200px;
-        height: 130px;
+        right:0;
+        top:0;
 
-        border-radius: 12px;
-        z-index: 5;
+        width:200px;
+        height:130px;
 
+        border-radius:12px;
+        z-index:5;
+    }
+
+    /* BUTTON */
+
+    .sectors-button{
+        width:180px;
+        height:48px;
+    }
+
+    /* VIDEO */
+
+    .sectors-side-video{
+
+        position:relative;
+
+        width:420px;
+        height:auto;
+
+        margin-top:60px;
+
+        right:auto;
+        bottom:auto;
+
+        border-radius:32px;
+    }
+
+    .sectors-side-video video{
+        width:100%;
+        height:auto;
+        border-radius:32px;
+        object-fit:cover;
     }
 
 }
-
 
 /* =================================
    TABLET PORTRAIT / LARGE PHONES

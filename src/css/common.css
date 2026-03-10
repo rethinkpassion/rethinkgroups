@@ -737,3 +737,90 @@ background-image: linear-gradient(to right,
     display: flex;
   }
 }
+
+/* =================================
+   LOADER RESPONSIVE
+=================================*/
+
+/* -------- TABLET (iPad) -------- */
+
+@media (max-width:1024px){
+
+  .horizontal-circle{
+    width:140px;
+    height:140px;
+  }
+
+  .dot{
+    width:36px;
+    height:36px;
+  }
+
+  @keyframes orbitDepth {
+    0%{
+      transform: translate(-50%, -50%) rotate(0deg) translateX(95px) rotate(0deg) scale(1);
+      opacity:1;
+      filter:blur(0px);
+    }
+
+    50%{
+      transform: translate(-50%, -50%) rotate(180deg) translateX(95px) rotate(-180deg) scale(0.55);
+      opacity:0.25;
+      filter:blur(3px);
+    }
+
+    100%{
+      transform: translate(-50%, -50%) rotate(360deg) translateX(95px) rotate(-360deg) scale(1);
+      opacity:1;
+      filter:blur(0px);
+    }
+  }
+
+  .loader-logo{
+    width:120px;
+    height:auto;
+  }
+
+}
+
+
+/* -------- MOBILE -------- */
+
+@media (max-width:600px){
+
+  .horizontal-circle{
+    width:100px;
+    height:100px;
+  }
+
+  .dot{
+    width:26px;
+    height:26px;
+  }
+
+  @keyframes orbitDepth {
+    0%{
+      transform: translate(-50%, -50%) rotate(0deg) translateX(70px) rotate(0deg) scale(1);
+      opacity:1;
+      filter:blur(0px);
+    }
+
+    50%{
+      transform: translate(-50%, -50%) rotate(180deg) translateX(70px) rotate(-180deg) scale(0.55);
+      opacity:0.25;
+      filter:blur(2px);
+    }
+
+    100%{
+      transform: translate(-50%, -50%) rotate(360deg) translateX(70px) rotate(-360deg) scale(1);
+      opacity:1;
+      filter:blur(0px);
+    }
+  }
+
+  .loader-logo{
+    width:95px;
+    height:auto;
+  }
+
+}

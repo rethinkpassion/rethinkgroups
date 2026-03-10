@@ -345,9 +345,9 @@ height: 23px;
     
     .animated-cube {
         right: 20px;
-        top: 35%;
-        width: 100px;
-        height: 100px;
+        top: 10%;
+        width: 123px;
+        height: 123px;
     }
     
     @keyframes circularPathMotion {

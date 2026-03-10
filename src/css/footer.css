@@ -27,7 +27,7 @@ body {
     position: absolute;
     top: 50px;
     left: 8%;
-    font-size: clamp(4rem, 10vw, 12rem); 
+    font-size: clamp(4rem, 10vw, 12rem);
     font-weight: 900;
     margin: 0;
     white-space: nowrap;
@@ -45,7 +45,7 @@ body {
 
 .letter:hover {
     animation: blink-effect 0.4s infinite alternate ease-in-out;
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
     z-index: 10;
 }
 
@@ -55,6 +55,7 @@ body {
         -webkit-text-stroke: 1px var(--accent-purple);
         text-shadow: 0 0 10px var(--accent-purple);
     }
+
     100% {
         color: var(--accent-blue);
         -webkit-text-stroke: 1px var(--accent-blue);
@@ -70,7 +71,7 @@ body {
     font-size: 36px;
     font-style: italic;
     font-weight: 500;
-    line-height: 59px; 
+    line-height: 59px;
 
 }
 
@@ -83,11 +84,13 @@ body {
     pointer-events: none;
 }
 
-.highlight-blue { color: var(--accent-blue);
-font-family: 'TiemposHeadline'; 
+.highlight-blue {
+    color: var(--accent-blue);
+    font-family: 'TiemposHeadline';
 }
-.highlight-purple-italic { 
-    font-style: italic; 
+
+.highlight-purple-italic {
+    font-style: italic;
     font-family: 'TiemposHeadline';
     background: var(--Gradient-06, linear-gradient(71deg, #40C9FF 9.04%, #E81CFF 83.63%));
     background-clip: text;
@@ -97,13 +100,14 @@ font-family: 'TiemposHeadline';
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.normal_text{
+
+.normal_text {
     font-family: auto;
 }
 
 .footer {
     background: #131313;
-     margin-top: 51px;
+    margin-top: 51px;
 
 }
 
@@ -120,7 +124,7 @@ font-family: 'TiemposHeadline';
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 14px; 
+    line-height: 14px;
     margin-bottom: 10px;
 }
 
@@ -143,20 +147,26 @@ font-family: 'TiemposHeadline';
 
 }
 
-.footer-col a:hover { color: var(--accent-purple); }
+.footer-col a:hover {
+    color: var(--accent-purple);
+}
 
-.contact-link { 
-    color: var(--accent-purple) !important; font-weight: 500;
+.contact-link {
+    color: var(--accent-purple) !important;
+    font-weight: 500;
     font-family: "Space Grotesk";
     font-size: 18px;
     font-style: normal;
-    line-height: 35.2px; 
+    line-height: 35.2px;
     letter-spacing: -1.28px;
-    display: inline-flex;   
-    align-items: center;     
+    display: inline-flex;
+    align-items: center;
     gap: 8px;
- }
-.map-link { text-decoration: underline !important; }
+}
+
+.map-link {
+    text-decoration: underline !important;
+}
 
 .footer-bottom {
     color: rgba(255, 255, 255, 0.40);
@@ -164,15 +174,20 @@ font-family: 'TiemposHeadline';
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 14px; 
+    line-height: 14px;
 }
 
 @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .bg-outline-text { top: 20px; }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bg-outline-text {
+        top: 20px;
+    }
 }
 
-.image-text-wrapper{
+.image-text-wrapper {
     display: flex;
     height: 118.411px;
     justify-content: center;
@@ -180,69 +195,75 @@ font-family: 'TiemposHeadline';
     align-self: stretch;
     gap: 8px;
 }
-.mail_icon{
+
+.mail_icon {
     width: 20px;
     height: 16px;
     stroke-width: 1.5px;
     stroke: rgba(173, 70, 255, 0.50);
-    display: flex;         
+    display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .mail_icon img {
-    width: 100%;             
+    width: 100%;
     height: auto;
-    display: block;         
+    display: block;
 }
+
 .location {
-    display: flex;          
-    align-items: center;   
-    gap: 8px;              
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: "Space Grotesk";
     font-size: 18px;
-    line-height: 35.2px;   
-    color: white;           
+    line-height: 35.2px;
+    color: white;
     letter-spacing: -0.5px;
 }
 
-.quick_label, .legal_label{
+.quick_label, .legal_label {
     color: #797979;
     font-family: "Tiempos Headline";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 14px; 
+    line-height: 14px;
     width: 160px;
 
 }
+
 .loc_icon {
     display: flex;
     align-items: center;
-    width: 20px;           
+    width: 20px;
 }
 
 .loc_icon img {
     width: 100%;
     height: auto;
-    display: block;        
+    display: block;
 }
 
 .map-link {
     color: var(--accent-purple) !important;
     text-decoration: underline;
-    margin-left: 5px;       
+    margin-left: 5px;
 }
-.quick_link{
+
+.quick_link {
     margin-left: 203px;
 }
-.legal_link{
+
+.legal_link {
     margin-left: 144px;
 }
 
-#letter-box{
-    display:flex;
-    align-items:center;
-    gap:8px;
+#letter-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .letter-wrapper {
@@ -281,3 +302,348 @@ font-family: 'TiemposHeadline';
 }
 
 
+/* =================================
+   IPAD / TABLET
+=================================*/
+
+@media (max-width: 1024px) {
+
+    .footer-container {
+        min-height: auto;
+        padding: 80px 40px 40px 40px;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        overflow: visible;
+    }
+
+    #letter-box {
+        justify-content: center;
+        gap: 4px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .letter-wrapper img,
+    .letter-img {
+        max-height: 42px;
+        width: auto;
+    }
+
+    .footer-content {
+        width: 100%;
+        max-width: 700px;
+        margin: 28px auto 0;
+        font-size: 24px;
+        line-height: 38px;
+        text-align: left;
+    }
+
+    .footer-content p {
+        font-size: 24px;
+        line-height: 38px;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 28px;
+        align-items: start;
+    }
+
+    .quick_link,
+    .legal_link {
+        margin-left: 0;
+    }
+
+    .label,
+    .quick_label,
+    .legal_label {
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 14px;
+        width: auto;
+    }
+
+    .footer-col a {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0;
+    }
+
+    .contact-link {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0;
+        gap: 8px;
+    }
+
+    .location {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .mail_icon,
+    .loc_icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .footer-bottom {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+}
+
+
+/* =================================
+   MOBILE
+=================================*/
+
+
+@media (max-width: 480px) {
+
+    .footer-container {
+        position: relative;
+        width: 100%;
+        min-height: 110vh;
+        /* increases section height so full footer becomes visible */
+        padding: 40px 16px 160px 16px;
+
+        background: #131313;
+
+        overflow: visible;
+        /* ensures children don't get clipped */
+    }
+
+    #letter-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        flex-wrap: nowrap;
+        overflow: visible;
+        /* FIX: prevents scroll blocking */
+    }
+
+    .letter-img,
+    .letter-wrapper img {
+        width: 24.05px;
+        height: 30.73px;
+        object-fit: contain;
+    }
+
+    .footer-content {
+
+        width: 100%;
+        max-width: 309px;
+
+        margin: 18px 0 0 0;
+
+        font-family: "TiemposHeadline", serif;
+        font-weight: 500;
+        font-style: italic;
+
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 0;
+
+        text-align: left;
+    }
+
+    .footer-content p {
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: 26px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 18px;
+        margin-bottom: 28px;
+    }
+
+    .footer-col:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .quick_link,
+    .legal_link {
+        margin-left: 0 !important;
+    }
+
+    .quick_label,
+    .legal_label {
+
+        font-family: "Tiempos Headline";
+        font-weight: 400;
+        font-style: normal;
+
+        font-size: 10px;
+        line-height: 10.38px;
+
+        letter-spacing: 0;
+
+        vertical-align: middle;
+
+        color: #797979;
+
+    }
+
+
+    .footer-col a {
+
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        font-size: 12px;
+        line-height: 26.7px;
+
+        letter-spacing: -0.18px;
+
+        vertical-align: middle;
+
+        color: #ffffff;
+
+        text-decoration: none;
+    }
+
+    .contact-link {
+
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 400;
+
+        font-size: 12px;
+        line-height: 28.53px;
+
+        letter-spacing: -1.04px;
+
+        color: #AD46FF;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+    }
+
+    .label {
+
+        font-family: "Tiempos Headline";
+        font-weight: 600;
+        font-style: normal;
+
+        font-size: 10px;
+        line-height: 11.35px;
+
+        letter-spacing: 0;
+
+        text-align: left;
+        vertical-align: middle;
+
+    }
+
+    .arrow {
+
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 400;
+
+        font-size: 12px;
+        line-height: 28.53px;
+
+        letter-spacing: -1.04px;
+
+        color: #AD46FF;
+
+    }
+
+    .location {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 0;
+        flex-wrap: wrap;
+        margin: 10px 0 0 0;
+    }
+
+    .mail_icon,
+    .loc_icon {
+
+        width: 19.45px;
+        height: 19.45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+    }
+
+    .mail_icon img,
+    .loc_icon img {
+
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+
+    .map-link {
+        margin-left: 3px;
+    }
+
+
+.footer-bottom{
+
+    font-family:"Tiempos Headline";
+    font-weight:600;
+    font-style:normal;
+
+    font-size:12px;
+    line-height:14px;
+
+    letter-spacing:0;
+
+    text-align:left;
+    vertical-align:middle;
+
+    color:rgba(255,255,255,0.4);
+
+    margin-top:24px;
+
+}
+
+.footer-bottom p{
+    margin:0;
+}
+
+    .footer-col.quick_link {
+        order: 1;
+    }
+
+    .footer-col.legal_link {
+        order: 2;
+    }
+
+    .footer-col.contact {
+        order: 3;
+    }
+}

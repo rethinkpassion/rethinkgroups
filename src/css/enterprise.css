@@ -329,9 +329,382 @@
     transform: translateY(0) scale(1);
 }
 
-.enterprise-card:nth-child(1) { transition-delay: 0.1s; }
-.enterprise-card:nth-child(2) { transition-delay: 0.2s; }
-.enterprise-card:nth-child(3) { transition-delay: 0.3s; }
-.enterprise-card:nth-child(4) { transition-delay: 0.4s; }
-.enterprise-card:nth-child(5) { transition-delay: 0.5s; }
-.enterprise-card:nth-child(6) { transition-delay: 0.6s; }
+.enterprise-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.enterprise-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.enterprise-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.enterprise-card:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.enterprise-card:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.enterprise-card:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* =================================
+   TABLET (iPad landscape)
+=================================*/
+
+@media (max-width: 1024px) {
+
+    .enterprise-section {
+        padding: 120px 20px;
+    }
+
+    .enterprise-label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+
+    .enterprise-heading {
+        font-family: "TiemposHeadline", serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    .enterprise-description {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0;
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    .enterprise-sub {
+        font-family: "TiemposHeadline", serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+     .enterprise-center{
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .enterprise-center video{
+        width:650px;
+        max-width:100%;
+    }
+
+    /* LOGO FIX FOR IPAD */
+
+    .enterprise-logo{
+
+        width:212px;      /* slightly smaller */
+
+        height:auto;
+
+        top:52%;          /* move logo slightly upward */
+
+        left:50%;
+
+        transform:translate(-50%, -50%);
+
+    }
+
+    /* Move cards closer to video */
+
+    .card-left-1 {
+        left: 47px;
+    }
+
+    .card-left-2 {
+        left: 20px;
+    }
+
+    .card-left-3 {
+        left: 47px;
+        bottom: -96px;
+    }
+
+    .card-right-1 {
+        right: 47px;
+    }
+
+    .card-right-2 {
+        right: 20px;
+    }
+
+    .card-right-3 {
+               right: 47px;
+        bottom: -96px;
+    }
+
+}
+
+
+/* =================================
+   TABLET PORTRAIT / LARGE PHONES
+=================================*/
+
+@media (max-width: 768px) {
+
+    .enterprise-label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+
+    .enterprise-heading {
+        font-family: "TiemposHeadline", serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .enterprise-description {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .enterprise-sub {
+        font-family: "TiemposHeadline", serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .enterprise-center video {
+        width: 520px;
+
+    }
+
+    .enterprise-logo {
+        width: 220px;
+    }
+
+    /* cards closer */
+
+    .card-left-1 {
+        left: 20px;
+        top: 300px;
+    }
+
+    .card-left-2 {
+        left: 10px;
+        top: 490px;
+    }
+
+    .card-left-3 {
+                left: 20px;
+        bottom: -183px;
+    }
+
+    .card-right-1 {
+        right: 20px;
+        top: 300px;
+    }
+
+    .card-right-2 {
+        right: 10px;
+        top: 490px;
+    }
+
+    .card-right-3 {
+        right: 20px;
+        bottom: -183px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .enterprise-section{
+        padding:90px 20px;
+    }
+
+    /* TYPOGRAPHY */
+
+    .enterprise-label{
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight:400;
+        font-size:12px;
+        line-height:24px;
+        text-transform:uppercase;
+    }
+
+    .enterprise-heading{
+        font-family:"TiemposHeadline", serif;
+        font-weight:500;
+        font-style:italic;
+        font-size:28px;
+        line-height:40px;
+        text-align:center;
+    }
+
+    .enterprise-description{
+        font-family:"Space Grotesk", sans-serif;
+        font-weight:300;
+        font-size:12px;
+        line-height:20px;
+        text-align:center;
+        padding:0 10px;
+    }
+
+    .enterprise-sub{
+        font-family:"TiemposHeadline", serif;
+        font-weight:500;
+        font-style:italic;
+        font-size:16px;
+        line-height:28px;
+        text-align:center;
+    }
+
+    /* GRID LAYOUT */
+
+    .enterprise-container{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:16px;
+        justify-items:center;
+    }
+
+    /* HEADER FULL WIDTH */
+
+    .enterprise-header{
+        grid-column:1 / -1;
+        order:1;
+    }
+
+    /* CARDS */
+
+    .enterprise-card{
+        position:relative;
+
+        width:158px;
+        height:101px;
+
+        padding:8px 12px;
+
+        border-radius:13.15px;
+        border:0.41px solid rgba(120,170,220,0.3);
+
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+
+        order:2;
+    }
+
+    /* RESET DESKTOP POSITIONS */
+
+    .card-left-1,
+    .card-left-2,
+    .card-left-3,
+    .card-right-1,
+    .card-right-2,
+    .card-right-3{
+        top:auto;
+        left:auto;
+        right:auto;
+        bottom:auto;
+    }
+
+    /* ICON */
+
+    .enterprise-card img{
+        width:28px;
+        height:28px;
+        object-fit:contain;
+    }
+
+    /* CARD TEXT */
+
+    .enterprise-card p{
+        font-family:"Space Grotesk", sans-serif;
+        font-weight:400;
+        font-size:11.5px;
+        line-height:17.26px;
+        text-transform:capitalize;
+        color:#A7B5BE;
+        margin:0;
+    }
+/* VIDEO AFTER CARDS */
+
+.enterprise-center{
+
+    grid-column:1 / -1;
+    order:3;
+
+    position:relative;
+
+    width:100%;
+    max-width:360px;   /* keeps circle nicely sized */
+
+    margin:50px auto 0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* VIDEO */
+
+.enterprise-center video{
+
+    width:100%;
+    height:auto;
+
+    border-radius:24px;
+}
+
+/* LOGO */
+
+.enterprise-logo{
+
+    position:absolute;
+
+    width:120px;   /* reduced so it sits nicely in circle */
+
+    height:auto;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    object-fit:contain;
+}
+}

@@ -85,12 +85,12 @@ function initSectorHoverPreview() {
           /* calculate position relative to the list */
           const topPosition = itemRect.top - listRect.top;
 
-          preview.style.top = topPosition + 5 + "px";
+          preview.style.top = topPosition + 50 + "px";
           const screenWidth = window.innerWidth;
 
           if (screenWidth <= 600) {
             /* phones */
-            preview.style.left = "210px";
+            preview.style.left = "283px";
           } else if (screenWidth <= 1024) {
             /* iPad / tablets */
             preview.style.left = "400px";

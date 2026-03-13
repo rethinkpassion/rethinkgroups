@@ -70,6 +70,12 @@ html {
   scroll-margin-top: 100px;
 }
 
+@media (max-width: 768px) {
+  #app > [id$="-placeholder"] {
+    scroll-margin-top: 70px; /* Smaller offset for mobile header */
+  }
+}
+
 
 body {
   /* background-color: var(--primary-bg); */

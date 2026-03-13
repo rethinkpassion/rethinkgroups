@@ -173,7 +173,7 @@
     border-radius: 18px;
     padding: 1px;
     /* important for gradient border */
-    background: linear-gradient(90deg, #2cc4ff, #9c3dff);
+    /* background: linear-gradient(90deg, #2cc4ff, #9c3dff); */
     transition: all .35s ease;
 }
 

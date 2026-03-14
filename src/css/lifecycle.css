@@ -22,7 +22,7 @@
 }
 @font-face {
     font-family: "Space Grotesk";
-    src: url("/public/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
+    src: url("../../public/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -229,7 +229,7 @@ white-space: nowrap;
     flex: 1;
     /* @font-face { */
     font-family: "Space Grotesk";
-    src: url("/public/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
+    src: url("../../public/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;

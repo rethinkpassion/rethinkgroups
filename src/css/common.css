@@ -718,7 +718,8 @@ header.is-scrolled .mobile-menu-icon {
   width: 26px;
   height: 18px;
   transform: translateY(-50%) translateX(-12px);
-  background: url("/public/assets/icons/sectors-section-arrow.png") no-repeat center;
+  /* background: url("/public/assets/icons/sectors-section-arrow.png") no-repeat center; */
+  background: url("../../public/assets/icons/sectors-section-arrow.png") no-repeat center;
   background-size: contain;
   opacity: 0;
   transition: all 0.4s ease;

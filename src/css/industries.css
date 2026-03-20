@@ -216,7 +216,7 @@
     transform:translateY(-50%) rotate(0deg);
     width:18px;
     height:18px;
-    background:url("/public/assets/images/Arrow_indus.png") no-repeat center;
+    background:url("../../public/assets/images/Arrow_indus.png") no-repeat center;
     background-size:contain;
     opacity:0;
 }
@@ -517,7 +517,7 @@
         transform:translateY(-50%) rotate(0deg);
         width:18px;
         height:18px;
-        background:url("/public/assets/images/Arrow_indus.png") no-repeat center;
+        background:url("../../public/assets/images/Arrow_indus.png") no-repeat center;
         background-size:contain;
         opacity:0;
     }

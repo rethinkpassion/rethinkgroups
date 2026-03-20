@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "TiemposHeadline";
-    src: url("/public/assets/fonts/Tiempos-Font/TiemposHeadline-Light.otf") format("opentype");
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Light.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: "TiemposHeadline";
-    src: url("/public/assets/fonts/Tiempos-Font/TiemposHeadline-Regular.otf") format("opentype");
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: "TiemposHeadline";
-    src: url("/public/assets/fonts/Tiempos-Font/TiemposHeadline-Bold.otf") format("opentype");
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
     font-family: "TiemposHeadline";
-    src: url("/public/assets/fonts/Tiempos-Font/TiemposHeadline-LightItalic.otf") format("opentype");
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-LightItalic.otf") format("opentype");
     font-weight: 300;
     font-style: italic;
     font-display: swap;

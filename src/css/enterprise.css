@@ -1,6 +1,6 @@
 @font-face {
     font-family: "TiemposHeadline";
-    src: url("/public/assets/fonts/Tiempos-Font/TiemposHeadline-LightItalic.otf") format("opentype");
+    src: url("../../public/assets/fonts/Tiempos-Font/TiemposHeadline-LightItalic.otf") format("opentype");
     font-weight: 300;
     font-style: italic;
     font-display: swap;

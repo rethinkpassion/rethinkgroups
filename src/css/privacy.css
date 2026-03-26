@@ -1,5 +1,5 @@
 :root {
-  --privacy-card-border-grad: linear-gradient(135deg,#98C0D170, rgba(38, 4, 19, 0.45));
+  --privacy-card-border-grad: linear-gradient(135deg,#a9d1e370 0,rgba(49, 49, 49, 0.45) 30%, rgba(44, 45, 45, 0.45) 100%);
   --privacy-surface-bg: rgba(0, 0, 0, 0.62);
   --privacy-card-border: rgba(168, 85, 247, 0.28);
   --privacy-text-muted: rgba(255, 255, 255, 0.72);
@@ -81,8 +81,8 @@
   font-style: italic;
   font-weight: 700;
   font-size: 56px;
-  line-height: 1.1;
-  margin-bottom: 40px;
+  /* line-height: 1.1; */
+  margin-bottom: 15px;
   background: linear-gradient(10deg, #40C9FF 0%, #c21cff 70%, #E81CFF 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -91,8 +91,18 @@
   font-weight: 500;
   /* font-style: Medium Italic; */
   font-size: 56px;
-  line-height: 55px;
+  /* line-height: 55px; */
 
+}
+.privacy-lead {
+  font-family: Space Grotesk;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
 }
 
 /* Shared card styling so both containers match */
@@ -103,9 +113,10 @@
   /* creates the border */
 }
 
-.privacy-card-surface {
+.privacy-body {
   border-radius: 15px;
-  background: var(--privacy-surface-bg);
+  margin-top: 50px;
+  background: var(--privacy-card-border-grad);
   border: 1px solid rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -115,69 +126,6 @@
   display: flex;
   align-items: flex-start;
   gap: 42px;
-}
-
-.privacy-sidebar {
-  width: 290px;
-  flex: 0 0 290px;
-}
-
-.privacy-sidebar .privacy-card-surface {
-  padding: 18px 16px;
-}
-
-.privacy-sidebar-heading {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
-  line-height: 25.18px;
-  letter-spacing: 0;
-  margin-bottom: 14px;
-  font-family: Tiempos Headline;
-  font-weight: 500;
-}
-
-.privacy-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.privacy-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 12px;
-
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.78);
-  border: 1px solid transparent;
-  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
-  font-size: 13px;
-  font-family: Tiempos Headline;
-  font-weight: 400;
-  font-style: Regular;
-  /* font-size: 14.69px; */
-  line-height: 20.99px;
-  letter-spacing: 0px;
-}
-
-
-
-.privacy-nav-link:hover,
-.privacy-nav-link.active {
-  background: #AD46FF;
-  border-color: rgba(255, 255, 255, 0.10);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.privacy-nav-bullet {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(168, 85, 247, 0.35);
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.10);
-  flex-shrink: 0;
 }
 
 .privacy-nav-icon {
@@ -238,7 +186,7 @@
 .privacy-section-heading h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0;
   color: rgba(255, 255, 255, 0.95);
   font-family: Tiempos Headline;

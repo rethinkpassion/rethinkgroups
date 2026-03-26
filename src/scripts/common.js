@@ -73,7 +73,7 @@ function showPrivacyOnlyView() {
         privacyPlaceholder.style.display = 'block';
         // Ensure the first section is highlighted in the sidebar.
         if (!window.location.hash || !window.location.hash.startsWith('#privacy-')) {
-            window.location.hash = '#privacy-introduction';
+            window.location.hash = '#privacy-intro';
         }
     }
 }
